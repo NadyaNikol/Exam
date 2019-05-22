@@ -1,0 +1,11 @@
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.exe.config
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.exe
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.pdb
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csprojAssemblyReference.cache
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.Form1.resources
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.cache
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.exe
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.pdb
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.NewBusiness.resources
