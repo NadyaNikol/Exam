@@ -9,3 +9,13 @@ C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInpu
 C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.exe
 C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.pdb
 C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.NewBusiness.resources
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.exe.config
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.exe
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\bin\Debug\Exam.pdb
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csprojResolveAssemblyReference.cache
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.Form1.resources
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.NewBusiness.resources
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.Cache
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.exe
+C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.pdb

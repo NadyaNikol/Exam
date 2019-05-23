@@ -13,6 +13,15 @@ namespace Exam
 {
     public partial class NewBusiness : Form
     {
+        TimeSpan ts = new TimeSpan();
+        DateTime dt = new DateTime();
+        public string NameProject { get { return textBoxNameProject.Text; } }
+        public DateTimePicker DateProject { get { return dateTimePickerDate; } }
+        public DateTime TimeProject { get { return DateTime.Parse($"{textBoxTimeHour.Text}:{textBoxTimeMinute}"); } }
+        public string PriorityProject { get { return comboBoxPriority.Text; } }
+        public string TagsProject { get { return comboBoxTag.Text; } }
+        public string CommentsProject { get { return textBoxComments.Text; } }
+
         public NewBusiness()
         {
             InitializeComponent();
@@ -33,7 +42,8 @@ namespace Exam
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -52,20 +62,37 @@ namespace Exam
 
         private void textBoxTimeHour_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxTimeHour.Text.Length >2 || Convert.ToInt32(textBoxTimeHour.Text) <0 ||
-               Convert.ToInt32(textBoxTimeHour.Text) > 23)
+            try
             {
-                textBoxTimeHour.Text = textBoxTimeHour.Text.Remove(2);
+                if (Convert.ToInt32(textBoxTimeHour.Text) < 0 || Convert.ToInt32(textBoxTimeHour.Text) > 23)
+                {
+                    textBoxTimeHour.Text = "";
+                }
+
+                else if (textBoxTimeHour.Text.Length > 2)
+                {
+                    textBoxTimeHour.Text = textBoxTimeHour.Text.Remove(2);
+                }
             }
+            catch { }
         }
 
         private void textBoxTimeMinute_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxTimeMinute.Text.Length > 2 || Convert.ToInt32(textBoxTimeHour.Text) < 0 ||
-               Convert.ToInt32(textBoxTimeHour.Text) > 59)
+            try
             {
-                textBoxTimeMinute.Text = textBoxTimeMinute.Text.Remove(2);
+                if (Convert.ToInt32(textBoxTimeMinute.Text) < 0 || Convert.ToInt32(textBoxTimeMinute.Text) > 59)
+                {
+                    textBoxTimeMinute.Text = "";
+                }
+
+                if (textBoxTimeMinute.Text.Length > 2 )
+                {
+                    textBoxTimeMinute.Text = textBoxTimeMinute.Text.Remove(2);
+                }
+
             }
+            catch { }
         }
 
         private void buttonAddFile_Click(object sender, EventArgs e)
@@ -77,6 +104,12 @@ namespace Exam
             {
 
             }
+        }
+
+        private void textBoxTimeHour_TabIndexChanged(object sender, EventArgs e)
+        {
+            textBoxTimeHour.TabIndex = 0;
+            textBoxTimeMinute.TabIndex = 1;
         }
     }
 }

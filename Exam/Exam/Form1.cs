@@ -24,7 +24,31 @@ namespace Exam
         private void buttonNewBusiness_Click(object sender, EventArgs e)
         {
             NewBusiness business = new NewBusiness();
-            business.ShowDialog();
+
+            if (business.ShowDialog() == DialogResult.OK)
+            {
+                ListViewItem item = new ListViewItem();
+
+                item.Text = business.NameProject;
+                item.SubItems[0].Text = business.DateProject.Text;
+                item.SubItems[1].Text = business.TimeProject.ToString();
+                item.SubItems[2].Text = business.PriorityProject;
+                item.SubItems[3].Text = business.TagsProject;
+                item.SubItems[4].Text = business.CommentsProject;
+
+
+                listViewBusiness.Items.Add(item);
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }
