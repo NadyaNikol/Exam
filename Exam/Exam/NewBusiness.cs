@@ -13,10 +13,10 @@ namespace Exam
 {
     public partial class NewBusiness : Form
     {
-        DateTime dt = new DateTime();
+        TimeSpan ts ;
         public string NameProject { get { return textBoxNameProject.Text; } }
-        public DateTimePicker DateProject { get { return dateTimePickerDate; } }
-        public DateTime TimeProject { get { return dt; } }
+        public DateTime DateProject { get { return dateTimePickerDate.Value.Date; } }
+        public TimeSpan TimeProject { get { return ts; } }
         public string PriorityProject { get { return comboBoxPriority.Text; } }
         public string TagsProject { get { return comboBoxTag.Text; } }
         public string CommentsProject { get { return textBoxComments.Text; } }
@@ -43,8 +43,7 @@ namespace Exam
         private void buttonOk_Click(object sender, EventArgs e)
         {
 
-            TimeSpan ts = new TimeSpan(Convert.ToInt32(textBoxTimeHour.Text), Convert.ToInt32(textBoxTimeMinute.Text), 0);
-            dt.Add(ts);
+            ts = new TimeSpan(Convert.ToInt32(textBoxTimeHour.Text), Convert.ToInt32(textBoxTimeMinute.Text), 0);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

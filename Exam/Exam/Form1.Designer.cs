@@ -34,8 +34,10 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonNewProject = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxNewProject = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // treeViewProjects
@@ -81,6 +83,7 @@
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonNewProject
             // 
@@ -90,14 +93,17 @@
             this.buttonNewProject.TabIndex = 5;
             this.buttonNewProject.Text = "New Project";
             this.buttonNewProject.UseVisualStyleBackColor = true;
+            this.buttonNewProject.Click += new System.EventHandler(this.buttonNewProject_Click);
             // 
-            // comboBox1
+            // comboBoxSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(867, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 28);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxSearch.FormattingEnabled = true;
+            this.comboBoxSearch.Location = new System.Drawing.Point(626, 10);
+            this.comboBoxSearch.Name = "comboBoxSearch";
+            this.comboBoxSearch.Size = new System.Drawing.Size(174, 28);
+            this.comboBoxSearch.TabIndex = 6;
+            this.comboBoxSearch.Visible = false;
+            this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearch_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -106,14 +112,38 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 26);
             this.dateTimePicker1.TabIndex = 7;
             // 
+            // textBoxNewProject
+            // 
+            this.textBoxNewProject.Location = new System.Drawing.Point(12, 12);
+            this.textBoxNewProject.Multiline = true;
+            this.textBoxNewProject.Name = "textBoxNewProject";
+            this.textBoxNewProject.Size = new System.Drawing.Size(238, 57);
+            this.textBoxNewProject.TabIndex = 8;
+            this.textBoxNewProject.Text = "Введите название проэкта...";
+            this.textBoxNewProject.Visible = false;
+            this.textBoxNewProject.Click += new System.EventHandler(this.textBoxNewProject_Click);
+            this.textBoxNewProject.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewProject_KeyPress);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Enabled = false;
+            this.textBoxSearch.Location = new System.Drawing.Point(626, 45);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(174, 26);
+            this.textBoxSearch.TabIndex = 9;
+            this.textBoxSearch.Visible = false;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1198, 612);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.textBoxNewProject);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxSearch);
             this.Controls.Add(this.buttonNewProject);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonSave);
@@ -123,6 +153,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,8 +165,10 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonNewProject;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.TextBox textBoxNewProject;
+        private System.Windows.Forms.TextBox textBoxSearch;
     }
 }
 

@@ -10,8 +10,8 @@ namespace Exam
         }
 
         public string NameProj { get; set; }
-        public DateTimePicker DateProject { get; set; }
-        public DateTime TimeProject { get; set; }
+        public DateTime DateProject { get; set; }
+        public TimeSpan TimeProject { get; set; }
         public string PriorityProject { get; set; }
         public string TagsProject { get; set; }
         public string CommentProject { get; set; }

@@ -19,3 +19,6 @@ C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.Properties.Resources.res
 C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.Cache
 C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.exe
 C:\Users\PKO\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.pdb
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\bin\Debug\itextsharp.dll
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\bin\Debug\itextsharp.xml
+C:\Users\Nadya\Desktop\Exam\Exam\Exam\Exam\obj\Debug\Exam.csproj.CopyComplete
