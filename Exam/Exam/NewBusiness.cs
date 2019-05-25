@@ -44,10 +44,24 @@ namespace Exam
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
+            bool IsEmpty = false;
+            foreach (Control item in this.Controls)
+            {
+                if (!String.IsNullOrEmpty( item.Text))
+                {
+                    MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    IsEmpty = true;
+                    break;
+                }
+            }
 
-            ts = new TimeSpan(Convert.ToInt32(textBoxTimeHour.Text), Convert.ToInt32(textBoxTimeMinute.Text), 0);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (!IsEmpty)
+            {
+                ts = new TimeSpan(Convert.ToInt32(textBoxTimeHour.Text), Convert.ToInt32(textBoxTimeMinute.Text), 0);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -121,6 +135,7 @@ namespace Exam
             if (comboBoxTag.Text == "Другие")
             {
                 textBoxNewTag.Visible = true;
+                buttonAdd.Visible = true;
             }
             else
             {
@@ -132,16 +147,20 @@ namespace Exam
         private void textBoxNewTag_Click(object sender, EventArgs e)
         {
             textBoxNewTag.Text = "";
-            buttonAdd.Visible = true;
+            buttonAdd.Enabled = true;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            comboBoxTag.Items.Add(textBoxNewTag.Text);
-            var tmp = comboBoxTag.Items[comboBoxTag.Items.Count - 1];
-            comboBoxTag.Items[comboBoxTag.Items.Count - 1] = comboBoxTag.Items[comboBoxTag.Items.Count - 2];
-            comboBoxTag.Items[comboBoxTag.Items.Count - 2] = tmp;
+            if (!String.IsNullOrEmpty(textBoxNewTag.Text))
+            {
+                comboBoxTag.Items.Add(textBoxNewTag.Text);
+                var tmp = comboBoxTag.Items[comboBoxTag.Items.Count - 1];
+                comboBoxTag.Items[comboBoxTag.Items.Count - 1] = comboBoxTag.Items[comboBoxTag.Items.Count - 2];
+                comboBoxTag.Items[comboBoxTag.Items.Count - 2] = tmp;
+            }
             
         }
+
     }
 }

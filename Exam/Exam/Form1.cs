@@ -27,8 +27,6 @@ namespace Exam
             comboBoxSelection.Items.Add("На неделю");
             comboBoxSelection.SelectedIndex = 0;
 
-            TreeNode nodeProject = new TreeNode("Rroject 1");
-            treeViewProjects.Nodes.Add(nodeProject);
 
             listColums = new List<string> { "Название", "Дата", "Время", "Приоритет", "Теги",
             "Комментарий", "Файл"};
@@ -40,28 +38,14 @@ namespace Exam
             for (int i = 0; i < listColums.Count; i++)
             {
                 listViewBusiness.Columns.Add(listColums[i]);
-                listViewBusiness.Columns[i].Width = 100;
+                listViewBusiness.Columns[i].Width = 110;
                 comboBoxSearch.Items.Add(listColums[i]);
             }
             comboBoxSearch.SelectedIndex = 0;
 
-            ImageList largeImList = new ImageList();
-            ImageList smallImList = new ImageList();
-
-            largeImList.ImageSize = new Size(50, 50);
-            smallImList.ImageSize = new Size(30, 30);
-            largeImList.Images.Add(new Bitmap("ikon.bmp"));
-            smallImList.Images.Add(new Bitmap("ikon.bmp"));
-
-
-            listViewBusiness.LargeImageList = largeImList;
-            listViewBusiness.SmallImageList = smallImList;
-            listViewBusiness.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-
-
+            listViewBusiness.AllowDrop = true;
         }
 
-      
 
         private void buttonNewBusiness_Click(object sender, EventArgs e)
         {
@@ -84,7 +68,6 @@ namespace Exam
 
                 FillListViewBusiness();
 
-                treeViewProjects.Nodes.Add(business.NameProject);
 
             }
         }
@@ -156,16 +139,6 @@ namespace Exam
         }
 
 
-        private void textBoxNewProject_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                treeViewProjects.Nodes.Add(textBoxNewProject.Text);
-                textBoxNewProject.Clear();
-                textBoxNewProject.Visible = false;
-            }
-        }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             comboBoxSearch.Visible = true;
@@ -209,7 +182,7 @@ namespace Exam
             {
                 case "На неделю":
                     {
-                        
+
                         DateTime dateTime = DateTime.Now;
                         for (int i = 0; i < listViewBusiness.Columns.Count; i++)
                         {
@@ -217,8 +190,8 @@ namespace Exam
                             {
                                 for (int j = 0; j < listViewBusiness.Items.Count; j++)
                                 {
-                                    
-                                   if ( (ListBusiness[j].DateProject -dateTime).TotalDays>7)
+
+                                    if ((ListBusiness[j].DateProject - dateTime).TotalDays > 7)
                                     {
                                         listViewBusiness.Items.RemoveAt(j);
                                         j--;
@@ -227,8 +200,8 @@ namespace Exam
                                 break;
                             }
                         }
-                        
-                            break;
+
+                        break;
                     }
 
                 case "На месяц":
@@ -256,6 +229,49 @@ namespace Exam
                 default:
                     break;
             }
+        }
+
+        private void textBoxNewProject_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!String.IsNullOrEmpty(textBoxNewProject.Text) &&  e.KeyChar == 13))
+                {
+                    Form1 form = new Form1();
+                    form.Text = textBoxNewProject.Text;
+                    form.Show();
+            }
+            else if ((String.IsNullOrEmpty(textBoxNewProject.Text)))
+            {
+                MessageBox.Show("Введите название проэкта", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void listViewBusiness_DragEnter_1(object sender, DragEventArgs e)
+        {
+            var listView = sender as ListView;
+            if (e.Data.GetDataPresent("System.Windows.Forms.ListView+SelectedListViewItemCollection") && e.AllowedEffect == DragDropEffects.Move)
+                e.Effect = DragDropEffects.Move;
+
+        }
+
+        private void listViewBusiness_DragDrop(object sender, DragEventArgs e)
+        {
+            var listView = sender as ListView;
+
+            var items = e.Data.GetData("System.Windows.Forms.ListView+SelectedListViewItemCollection") as ListView.SelectedListViewItemCollection;
+
+            foreach (ListViewItem item in items)
+            {
+                item.ListView.Items.Remove(item);
+                listView.Items.Add(item);
+            }
+        
+        }
+
+        private void listViewBusiness_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            var listView1 = sender as ListView;
+
+            listView1.DoDragDrop(listView1.SelectedItems, DragDropEffects.Move);
         }
     }
 }

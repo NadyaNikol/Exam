@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeViewProjects = new System.Windows.Forms.TreeView();
             this.listViewBusiness = new System.Windows.Forms.ListView();
             this.buttonNewBussnes = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -40,20 +39,17 @@
             this.comboBoxSelection = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // treeViewProjects
-            // 
-            this.treeViewProjects.Location = new System.Drawing.Point(12, 85);
-            this.treeViewProjects.Name = "treeViewProjects";
-            this.treeViewProjects.Size = new System.Drawing.Size(238, 438);
-            this.treeViewProjects.TabIndex = 0;
-            // 
             // listViewBusiness
             // 
-            this.listViewBusiness.Location = new System.Drawing.Point(280, 85);
+            this.listViewBusiness.AllowDrop = true;
+            this.listViewBusiness.Location = new System.Drawing.Point(12, 85);
             this.listViewBusiness.Name = "listViewBusiness";
-            this.listViewBusiness.Size = new System.Drawing.Size(866, 438);
+            this.listViewBusiness.Size = new System.Drawing.Size(1134, 438);
             this.listViewBusiness.TabIndex = 1;
             this.listViewBusiness.UseCompatibleStateImageBehavior = false;
+            this.listViewBusiness.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listViewBusiness_ItemDrag);
+            this.listViewBusiness.DragDrop += new System.Windows.Forms.DragEventHandler(this.listViewBusiness_DragDrop);
+            this.listViewBusiness.DragEnter += new System.Windows.Forms.DragEventHandler(this.listViewBusiness_DragEnter_1);
             // 
             // buttonNewBussnes
             // 
@@ -151,7 +147,6 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonNewBussnes);
             this.Controls.Add(this.listViewBusiness);
-            this.Controls.Add(this.treeViewProjects);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -160,8 +155,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView treeViewProjects;
         private System.Windows.Forms.ListView listViewBusiness;
         private System.Windows.Forms.Button buttonNewBussnes;
         private System.Windows.Forms.Button buttonSave;

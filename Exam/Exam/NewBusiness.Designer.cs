@@ -62,7 +62,6 @@
             this.textBoxTimeHour.Name = "textBoxTimeHour";
             this.textBoxTimeHour.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeHour.TabIndex = 1;
-            this.textBoxTimeHour.Text = "4";
             this.textBoxTimeHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeHour.TabIndexChanged += new System.EventHandler(this.textBoxTimeHour_TabIndexChanged);
             this.textBoxTimeHour.TextChanged += new System.EventHandler(this.textBoxTimeHour_TextChanged);
@@ -74,7 +73,6 @@
             this.textBoxTimeMinute.Name = "textBoxTimeMinute";
             this.textBoxTimeMinute.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeMinute.TabIndex = 2;
-            this.textBoxTimeMinute.Text = "5";
             this.textBoxTimeMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeMinute.TextChanged += new System.EventHandler(this.textBoxTimeMinute_TextChanged);
             this.textBoxTimeMinute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTimeHour_KeyPress);
@@ -139,7 +137,6 @@
             this.textBoxComments.Name = "textBoxComments";
             this.textBoxComments.Size = new System.Drawing.Size(526, 141);
             this.textBoxComments.TabIndex = 9;
-            this.textBoxComments.Text = "6";
             // 
             // labelComments
             // 
@@ -181,9 +178,9 @@
             // 
             // buttonAddFile
             // 
-            this.buttonAddFile.Location = new System.Drawing.Point(776, 452);
+            this.buttonAddFile.Location = new System.Drawing.Point(777, 429);
             this.buttonAddFile.Name = "buttonAddFile";
-            this.buttonAddFile.Size = new System.Drawing.Size(75, 75);
+            this.buttonAddFile.Size = new System.Drawing.Size(108, 97);
             this.buttonAddFile.TabIndex = 14;
             this.buttonAddFile.Text = "AddFile";
             this.buttonAddFile.UseVisualStyleBackColor = true;
@@ -196,7 +193,6 @@
             this.textBoxNameProject.Name = "textBoxNameProject";
             this.textBoxNameProject.Size = new System.Drawing.Size(714, 26);
             this.textBoxNameProject.TabIndex = 15;
-            this.textBoxNameProject.Text = "8";
             // 
             // labelNameProject
             // 
@@ -219,6 +215,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.Enabled = false;
             this.buttonAdd.Location = new System.Drawing.Point(330, 337);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(150, 42);
