@@ -62,6 +62,7 @@
             this.textBoxTimeHour.Name = "textBoxTimeHour";
             this.textBoxTimeHour.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeHour.TabIndex = 1;
+            this.textBoxTimeHour.Text = "4";
             this.textBoxTimeHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeHour.TabIndexChanged += new System.EventHandler(this.textBoxTimeHour_TabIndexChanged);
             this.textBoxTimeHour.TextChanged += new System.EventHandler(this.textBoxTimeHour_TextChanged);
@@ -73,6 +74,7 @@
             this.textBoxTimeMinute.Name = "textBoxTimeMinute";
             this.textBoxTimeMinute.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeMinute.TabIndex = 2;
+            this.textBoxTimeMinute.Text = "5";
             this.textBoxTimeMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeMinute.TextChanged += new System.EventHandler(this.textBoxTimeMinute_TextChanged);
             this.textBoxTimeMinute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTimeHour_KeyPress);
@@ -137,6 +139,7 @@
             this.textBoxComments.Name = "textBoxComments";
             this.textBoxComments.Size = new System.Drawing.Size(526, 141);
             this.textBoxComments.TabIndex = 9;
+            this.textBoxComments.Text = "6";
             // 
             // labelComments
             // 
@@ -193,6 +196,7 @@
             this.textBoxNameProject.Name = "textBoxNameProject";
             this.textBoxNameProject.Size = new System.Drawing.Size(714, 26);
             this.textBoxNameProject.TabIndex = 15;
+            this.textBoxNameProject.Text = "8";
             // 
             // labelNameProject
             // 

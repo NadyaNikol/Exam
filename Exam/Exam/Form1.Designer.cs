@@ -35,9 +35,9 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonNewProject = new System.Windows.Forms.Button();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNewProject = new System.Windows.Forms.TextBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.comboBoxSelection = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // treeViewProjects
@@ -105,13 +105,6 @@
             this.comboBoxSearch.Visible = false;
             this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearch_SelectedIndexChanged);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1026, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 26);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
             // textBoxNewProject
             // 
             this.textBoxNewProject.Location = new System.Drawing.Point(12, 12);
@@ -134,15 +127,24 @@
             this.textBoxSearch.Visible = false;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
+            // comboBoxSelection
+            // 
+            this.comboBoxSelection.FormattingEnabled = true;
+            this.comboBoxSelection.Location = new System.Drawing.Point(934, 31);
+            this.comboBoxSelection.Name = "comboBoxSelection";
+            this.comboBoxSelection.Size = new System.Drawing.Size(174, 28);
+            this.comboBoxSelection.TabIndex = 10;
+            this.comboBoxSelection.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelection_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1198, 612);
+            this.Controls.Add(this.comboBoxSelection);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.textBoxNewProject);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBoxSearch);
             this.Controls.Add(this.buttonNewProject);
             this.Controls.Add(this.buttonSearch);
@@ -166,9 +168,9 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonNewProject;
         private System.Windows.Forms.ComboBox comboBoxSearch;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.TextBox textBoxNewProject;
         private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.ComboBox comboBoxSelection;
     }
 }
 

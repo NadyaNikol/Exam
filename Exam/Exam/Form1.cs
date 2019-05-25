@@ -22,11 +22,16 @@ namespace Exam
         {
             InitializeComponent();
 
+            comboBoxSelection.Items.Add("Все");
+            comboBoxSelection.Items.Add("На месяц");
+            comboBoxSelection.Items.Add("На неделю");
+            comboBoxSelection.SelectedIndex = 0;
+
             TreeNode nodeProject = new TreeNode("Rroject 1");
             treeViewProjects.Nodes.Add(nodeProject);
 
             listColums = new List<string> { "Название", "Дата", "Время", "Приоритет", "Теги",
-            "Комментарий"};
+            "Комментарий", "Файл"};
 
             listViewBusiness.GridLines = true;
             listViewBusiness.FullRowSelect = true;
@@ -53,52 +58,10 @@ namespace Exam
             listViewBusiness.SmallImageList = smallImList;
             listViewBusiness.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
-            CreateContextMenu();
-
-
 
         }
 
-        private void CreateContextMenu()
-        {
-            ContextMenuStrip contextMenuStrip1 = new ContextMenuStrip();
-            contextMenuStrip1.Items.Add("Detail");
-            contextMenuStrip1.Items.Add("Tile");
-            contextMenuStrip1.Items.Add("LargeIcon");
-            contextMenuStrip1.Items.Add("SmallIcon");
-            contextMenuStrip1.Items.Add("List");
-
-            foreach (var item in contextMenuStrip1.Items)
-            {
-                (item as ToolStripMenuItem).Click += Form1_Click;
-            }
-            listViewBusiness.ContextMenuStrip = contextMenuStrip1;
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-            switch ((sender as ToolStripMenuItem).Text)
-            {
-                case "Detail":
-                    listViewBusiness.View = View.Details;
-                    break;
-                case "Tile":
-                    listViewBusiness.View = View.Tile;
-                    break;
-                case "LargeIcon":
-                    listViewBusiness.View = View.LargeIcon;
-                    break;
-                case "SmallIcon":
-                    listViewBusiness.View = View.SmallIcon;
-                    break;
-                case "list":
-                    listViewBusiness.View = View.List;
-                    break;
-                default:
-                    break;
-
-            }
-        }
+      
 
         private void buttonNewBusiness_Click(object sender, EventArgs e)
         {
@@ -106,14 +69,6 @@ namespace Exam
 
             if (business.ShowDialog() == DialogResult.OK)
             {
-                //ListViewItem item = new ListViewItem(business.NameProject);
-
-                //item.SubItems.Add(business.DateProject.Text);
-                //item.SubItems.Add(business.TimeProject.ToString());
-                //item.SubItems.Add(business.PriorityProject);
-                //item.SubItems.Add(business.TagsProject);
-                //item.SubItems.Add(business.CommentsProject);
-                //listViewBusiness.Items.Add(item);
 
                 ListBusiness.Add(new BusinessClass
                 {
@@ -122,7 +77,9 @@ namespace Exam
                     TimeProject = business.TimeProject,
                     PriorityProject = business.PriorityProject,
                     TagsProject = business.TagsProject,
-                    CommentProject = business.CommentsProject
+                    CommentProject = business.CommentsProject,
+                    pathFile = business.pathFile
+
                 });
 
                 FillListViewBusiness();
@@ -144,6 +101,7 @@ namespace Exam
                 item.SubItems.Add(ListBusiness[i].PriorityProject);
                 item.SubItems.Add(ListBusiness[i].TagsProject);
                 item.SubItems.Add(ListBusiness[i].CommentProject);
+                item.SubItems.Add(ListBusiness[i].pathFile);
 
                 listViewBusiness.Items.Add(item);
             }
@@ -241,6 +199,63 @@ namespace Exam
                 }
             }
 
+        }
+
+        private void comboBoxSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MonthCalendar monthCalendar = new MonthCalendar();
+            FillListViewBusiness();
+            switch (comboBoxSelection.SelectedItem)
+            {
+                case "На неделю":
+                    {
+                        
+                        DateTime dateTime = DateTime.Now;
+                        for (int i = 0; i < listViewBusiness.Columns.Count; i++)
+                        {
+                            if (listViewBusiness.Columns[i].Text == "Дата")
+                            {
+                                for (int j = 0; j < listViewBusiness.Items.Count; j++)
+                                {
+                                    
+                                   if ( (ListBusiness[j].DateProject -dateTime).TotalDays>7)
+                                    {
+                                        listViewBusiness.Items.RemoveAt(j);
+                                        j--;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        
+                            break;
+                    }
+
+                case "На месяц":
+                    {
+                        FillListViewBusiness();
+                        DateTime dateTime = DateTime.Now;
+                        for (int i = 0; i < listViewBusiness.Columns.Count; i++)
+                        {
+                            if (listViewBusiness.Columns[i].Text == "Дата")
+                            {
+                                for (int j = 0; j < listViewBusiness.Items.Count; j++)
+                                {
+                                    if ((ListBusiness[j].DateProject - dateTime).TotalDays > DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month))
+                                    {
+                                        listViewBusiness.Items.RemoveAt(j);
+                                        j--;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+
+                default:
+                    break;
+            }
         }
     }
 }

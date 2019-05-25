@@ -15,5 +15,6 @@ namespace Exam
         public string PriorityProject { get; set; }
         public string TagsProject { get; set; }
         public string CommentProject { get; set; }
+        public string pathFile { get; set; }
     }
 }

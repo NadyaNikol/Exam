@@ -14,12 +14,14 @@ namespace Exam
     public partial class NewBusiness : Form
     {
         TimeSpan ts ;
+        public string path = "-";
         public string NameProject { get { return textBoxNameProject.Text; } }
         public DateTime DateProject { get { return dateTimePickerDate.Value.Date; } }
         public TimeSpan TimeProject { get { return ts; } }
         public string PriorityProject { get { return comboBoxPriority.Text; } }
         public string TagsProject { get { return comboBoxTag.Text; } }
         public string CommentsProject { get { return textBoxComments.Text; } }
+        public string pathFile { get { return path; } }
 
         public NewBusiness()
         {
@@ -104,7 +106,7 @@ namespace Exam
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-
+                path = openFile.FileName;
             }
         }
 
