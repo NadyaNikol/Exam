@@ -45,22 +45,22 @@
             this.buttonAddFile = new System.Windows.Forms.Button();
             this.textBoxNameProject = new System.Windows.Forms.TextBox();
             this.labelNameProject = new System.Windows.Forms.Label();
+            this.textBoxNewTag = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePickerDate
             // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(91, 79);
-            this.dateTimePickerDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(136, 122);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(119, 20);
+            this.dateTimePickerDate.Size = new System.Drawing.Size(176, 26);
             this.dateTimePickerDate.TabIndex = 0;
             // 
             // textBoxTimeHour
             // 
-            this.textBoxTimeHour.Location = new System.Drawing.Point(91, 120);
-            this.textBoxTimeHour.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTimeHour.Location = new System.Drawing.Point(136, 185);
             this.textBoxTimeHour.Name = "textBoxTimeHour";
-            this.textBoxTimeHour.Size = new System.Drawing.Size(41, 20);
+            this.textBoxTimeHour.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeHour.TabIndex = 1;
             this.textBoxTimeHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeHour.TabIndexChanged += new System.EventHandler(this.textBoxTimeHour_TabIndexChanged);
@@ -69,10 +69,9 @@
             // 
             // textBoxTimeMinute
             // 
-            this.textBoxTimeMinute.Location = new System.Drawing.Point(145, 120);
-            this.textBoxTimeMinute.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTimeMinute.Location = new System.Drawing.Point(218, 185);
             this.textBoxTimeMinute.Name = "textBoxTimeMinute";
-            this.textBoxTimeMinute.Size = new System.Drawing.Size(41, 20);
+            this.textBoxTimeMinute.Size = new System.Drawing.Size(60, 26);
             this.textBoxTimeMinute.TabIndex = 2;
             this.textBoxTimeMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxTimeMinute.TextChanged += new System.EventHandler(this.textBoxTimeMinute_TextChanged);
@@ -81,96 +80,87 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(9, 79);
-            this.labelDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDate.Location = new System.Drawing.Point(14, 122);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(36, 13);
+            this.labelDate.Size = new System.Drawing.Size(52, 20);
             this.labelDate.TabIndex = 3;
             this.labelDate.Text = "Дата:";
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(9, 120);
-            this.labelTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTime.Location = new System.Drawing.Point(14, 185);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(43, 13);
+            this.labelTime.Size = new System.Drawing.Size(62, 20);
             this.labelTime.TabIndex = 4;
             this.labelTime.Text = "Время:";
             // 
             // comboBoxPriority
             // 
             this.comboBoxPriority.FormattingEnabled = true;
-            this.comboBoxPriority.Location = new System.Drawing.Point(91, 163);
-            this.comboBoxPriority.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxPriority.Location = new System.Drawing.Point(136, 251);
             this.comboBoxPriority.Name = "comboBoxPriority";
-            this.comboBoxPriority.Size = new System.Drawing.Size(114, 21);
+            this.comboBoxPriority.Size = new System.Drawing.Size(169, 28);
             this.comboBoxPriority.TabIndex = 5;
             // 
             // labelPriority
             // 
             this.labelPriority.AutoSize = true;
-            this.labelPriority.Location = new System.Drawing.Point(9, 168);
-            this.labelPriority.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPriority.Location = new System.Drawing.Point(14, 258);
             this.labelPriority.Name = "labelPriority";
-            this.labelPriority.Size = new System.Drawing.Size(64, 13);
+            this.labelPriority.Size = new System.Drawing.Size(97, 20);
             this.labelPriority.TabIndex = 6;
             this.labelPriority.Text = "Приоритет:";
             // 
             // labelTags
             // 
             this.labelTags.AutoSize = true;
-            this.labelTags.Location = new System.Drawing.Point(9, 212);
-            this.labelTags.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTags.Location = new System.Drawing.Point(14, 326);
             this.labelTags.Name = "labelTags";
-            this.labelTags.Size = new System.Drawing.Size(34, 13);
+            this.labelTags.Size = new System.Drawing.Size(47, 20);
             this.labelTags.TabIndex = 7;
             this.labelTags.Text = "Теги:";
             // 
             // comboBoxTag
             // 
             this.comboBoxTag.FormattingEnabled = true;
-            this.comboBoxTag.Location = new System.Drawing.Point(91, 207);
-            this.comboBoxTag.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxTag.Location = new System.Drawing.Point(136, 318);
             this.comboBoxTag.Name = "comboBoxTag";
-            this.comboBoxTag.Size = new System.Drawing.Size(116, 21);
+            this.comboBoxTag.Size = new System.Drawing.Size(172, 28);
             this.comboBoxTag.TabIndex = 8;
+            this.comboBoxTag.SelectedIndexChanged += new System.EventHandler(this.comboBoxTag_SelectedIndexChanged);
             // 
             // textBoxComments
             // 
-            this.textBoxComments.Location = new System.Drawing.Point(90, 250);
-            this.textBoxComments.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxComments.Location = new System.Drawing.Point(135, 385);
             this.textBoxComments.Multiline = true;
             this.textBoxComments.Name = "textBoxComments";
-            this.textBoxComments.Size = new System.Drawing.Size(352, 93);
+            this.textBoxComments.Size = new System.Drawing.Size(526, 141);
             this.textBoxComments.TabIndex = 9;
             // 
             // labelComments
             // 
             this.labelComments.AutoSize = true;
-            this.labelComments.Location = new System.Drawing.Point(6, 250);
-            this.labelComments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelComments.Location = new System.Drawing.Point(9, 385);
             this.labelComments.Name = "labelComments";
-            this.labelComments.Size = new System.Drawing.Size(80, 13);
+            this.labelComments.Size = new System.Drawing.Size(117, 20);
             this.labelComments.TabIndex = 10;
             this.labelComments.Text = "Комментарий:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 122);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(201, 188);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(10, 13);
+            this.label6.Size = new System.Drawing.Size(13, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = ":";
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(337, 120);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonOk.Location = new System.Drawing.Point(91, 572);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(105, 82);
+            this.buttonOk.Size = new System.Drawing.Size(319, 126);
             this.buttonOk.TabIndex = 12;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -178,10 +168,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(468, 122);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancel.Location = new System.Drawing.Point(513, 572);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(99, 82);
+            this.buttonCancel.Size = new System.Drawing.Size(336, 126);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -189,10 +178,9 @@
             // 
             // buttonAddFile
             // 
-            this.buttonAddFile.Location = new System.Drawing.Point(517, 294);
-            this.buttonAddFile.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddFile.Location = new System.Drawing.Point(776, 452);
             this.buttonAddFile.Name = "buttonAddFile";
-            this.buttonAddFile.Size = new System.Drawing.Size(50, 49);
+            this.buttonAddFile.Size = new System.Drawing.Size(75, 75);
             this.buttonAddFile.TabIndex = 14;
             this.buttonAddFile.Text = "AddFile";
             this.buttonAddFile.UseVisualStyleBackColor = true;
@@ -200,26 +188,49 @@
             // 
             // textBoxNameProject
             // 
-            this.textBoxNameProject.Location = new System.Drawing.Point(90, 45);
+            this.textBoxNameProject.Location = new System.Drawing.Point(135, 69);
+            this.textBoxNameProject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNameProject.Name = "textBoxNameProject";
-            this.textBoxNameProject.Size = new System.Drawing.Size(477, 20);
+            this.textBoxNameProject.Size = new System.Drawing.Size(714, 26);
             this.textBoxNameProject.TabIndex = 15;
             // 
             // labelNameProject
             // 
             this.labelNameProject.AutoSize = true;
-            this.labelNameProject.Location = new System.Drawing.Point(11, 19);
-            this.labelNameProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNameProject.Location = new System.Drawing.Point(16, 29);
             this.labelNameProject.Name = "labelNameProject";
-            this.labelNameProject.Size = new System.Drawing.Size(104, 13);
+            this.labelNameProject.Size = new System.Drawing.Size(153, 20);
             this.labelNameProject.TabIndex = 16;
             this.labelNameProject.Text = "Название проэкта:";
             // 
+            // textBoxNewTag
+            // 
+            this.textBoxNewTag.Location = new System.Drawing.Point(330, 305);
+            this.textBoxNewTag.Name = "textBoxNewTag";
+            this.textBoxNewTag.Size = new System.Drawing.Size(150, 26);
+            this.textBoxNewTag.TabIndex = 17;
+            this.textBoxNewTag.Text = "Введите текст...";
+            this.textBoxNewTag.Visible = false;
+            this.textBoxNewTag.Click += new System.EventHandler(this.textBoxNewTag_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(330, 337);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(150, 42);
+            this.buttonAdd.TabIndex = 18;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Visible = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // NewBusiness
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 483);
+            this.ClientSize = new System.Drawing.Size(897, 743);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.textBoxNewTag);
             this.Controls.Add(this.labelNameProject);
             this.Controls.Add(this.textBoxNameProject);
             this.Controls.Add(this.buttonAddFile);
@@ -237,7 +248,6 @@
             this.Controls.Add(this.textBoxTimeMinute);
             this.Controls.Add(this.textBoxTimeHour);
             this.Controls.Add(this.dateTimePickerDate);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewBusiness";
             this.Text = "NewBusiness";
             this.ResumeLayout(false);
@@ -264,5 +274,7 @@
         private System.Windows.Forms.Button buttonAddFile;
         private System.Windows.Forms.TextBox textBoxNameProject;
         private System.Windows.Forms.Label labelNameProject;
+        private System.Windows.Forms.TextBox textBoxNewTag;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

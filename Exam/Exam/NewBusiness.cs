@@ -13,11 +13,10 @@ namespace Exam
 {
     public partial class NewBusiness : Form
     {
-        TimeSpan ts = new TimeSpan();
         DateTime dt = new DateTime();
         public string NameProject { get { return textBoxNameProject.Text; } }
         public DateTimePicker DateProject { get { return dateTimePickerDate; } }
-        public DateTime TimeProject { get { return DateTime.Parse($"{textBoxTimeHour.Text}:{textBoxTimeMinute}"); } }
+        public DateTime TimeProject { get { return dt; } }
         public string PriorityProject { get { return comboBoxPriority.Text; } }
         public string TagsProject { get { return comboBoxTag.Text; } }
         public string CommentsProject { get { return textBoxComments.Text; } }
@@ -38,10 +37,14 @@ namespace Exam
             comboBoxTag.Items.Add("Другие");
             comboBoxTag.SelectedIndex = 0;
 
+
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
+
+            TimeSpan ts = new TimeSpan(Convert.ToInt32(textBoxTimeHour.Text), Convert.ToInt32(textBoxTimeMinute.Text), 0);
+            dt.Add(ts);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -110,6 +113,34 @@ namespace Exam
         {
             textBoxTimeHour.TabIndex = 0;
             textBoxTimeMinute.TabIndex = 1;
+        }
+
+        private void comboBoxTag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxTag.Text == "Другие")
+            {
+                textBoxNewTag.Visible = true;
+            }
+            else
+            {
+                textBoxNewTag.Visible = false;
+                buttonAdd.Visible = false;
+            }
+        }
+
+        private void textBoxNewTag_Click(object sender, EventArgs e)
+        {
+            textBoxNewTag.Text = "";
+            buttonAdd.Visible = true;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            comboBoxTag.Items.Add(textBoxNewTag.Text);
+            var tmp = comboBoxTag.Items[comboBoxTag.Items.Count - 1];
+            comboBoxTag.Items[comboBoxTag.Items.Count - 1] = comboBoxTag.Items[comboBoxTag.Items.Count - 2];
+            comboBoxTag.Items[comboBoxTag.Items.Count - 2] = tmp;
+            
         }
     }
 }
